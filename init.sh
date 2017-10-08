@@ -7,9 +7,10 @@ unzip provision_template.zip
 cd provision_template-master
 sh install_mitamae.sh
 
-# if [ -n "$1" ]; then
-#   case $1 in
-#     "rails" ) bin/mitamae local roles/rails/default.rb ;;
-#     * ) echo "Please select role"
-#   esac
-# fi
+if [ -n "$1" ]; then
+  case $1 in
+    "rails" ) bin/mitamae local roles/rails/default.rb ;;
+    "php-fpm" ) bin/mitamae local roles/php-fpm/default.rb ;;
+    * ) echo "Please select role in roles directory"
+  esac
+fi
