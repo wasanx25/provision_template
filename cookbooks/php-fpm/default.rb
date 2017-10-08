@@ -15,19 +15,18 @@ end
 VERSION = '5.6.31'
 FILE_NAME = "php-#{VERSION}"
 
-execute "wget http://jp2.php.net/get/#{FILE_NAME}.tar.gz/from/this/mirror"
+execute "wget http://jp2.php.net/get/#{FILE_NAME}.tar.gz/from/this/mirror #{FILE_NAME}.tar.gz"
 execute "tar -zxvf #{FILE_NAME}.tar.gz"
 
 configure_command = <<-EOF
-  ./configure --prefix=/usr/loca/stow/#{FILE_NAME} \
+  ./configure --prefix=/usr/local/stow/#{FILE_NAME} \
     --enable-mbstring \
     --with-mysql \
     --with-pdo-mysql \
     --with-mysqli \
     --enable-fpm \
     --with-fpm-user=nginx \
-    --with-fpm-group=nginx \
-    --with-openssl
+    --with-fpm-group=nginx
 EOF
 
 [configure_command, 'make', 'make install'].each do |cmd|
