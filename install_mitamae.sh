@@ -17,4 +17,4 @@ esac
 
 wget "https://github.com/itamae-kitchen/mitamae/releases/download/v${version}/${file_name}"
 chmod +x ${file_name}
-mv ${file_name} mitamae
+mv ${file_name} bin/mitamae
