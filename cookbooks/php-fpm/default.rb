@@ -15,7 +15,7 @@ end
 VERSION = '5.6.31'
 FILE_NAME = "php-#{VERSION}"
 
-execute "wget http://jp2.php.net/get/#{FILE_NAME}.tar.gz/from/this/mirror #{FILE_NAME}.tar.gz"
+execute "wget http://jp2.php.net/get/#{FILE_NAME}.tar.gz/from/this/mirror -O #{FILE_NAME}.tar.gz"
 execute "tar -zxvf #{FILE_NAME}.tar.gz"
 
 configure_command = <<-EOF
