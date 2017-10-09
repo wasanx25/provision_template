@@ -40,3 +40,13 @@ execute "stow -Rv #{FILE_NAME}" do
 end
 
 execute "rm -rf #{FILE_NAME}"
+
+# require after install nginx
+template '/etc/nginx/sites-available/php-fpm-sample.conf' do
+  user 'root'
+  group 'root'
+end
+
+service 'nginx' do
+  action [:enable, :restart]
+end
