@@ -4,6 +4,7 @@ end
 
 %w(
   autoconf
+  build-essential
   gettext
   libcurl4-gnutls-dev
   libexpat1-dev

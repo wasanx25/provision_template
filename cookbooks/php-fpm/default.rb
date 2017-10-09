@@ -1,4 +1,5 @@
 %w(
+  build-essential
   libcurl4-openssl-dev
   libicu-dev
   libmcrypt-dev
