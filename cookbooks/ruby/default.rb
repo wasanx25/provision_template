@@ -35,4 +35,4 @@ end
 
 execute "rm -rf #{FILE_NAME}"
 
-execute 'gem install bundler'
+execute 'gem install bundler -v 1.16.0'
